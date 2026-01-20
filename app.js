@@ -1,4 +1,4 @@
-(() => {
+(async () => {
   const $ = (id) => document.getElementById(id);
 
   const els = {
@@ -40,7 +40,7 @@
 
   const fmt = {
     int: (n) => Number.isFinite(n) ? String(Math.round(n)) : "-",
-    num: (n, digits = 4) => Number.isFinite(n) ? Number(n).toFixed(digits).replace(/0+$/,"...").replace(/\.$/,"") : "-",
+    num: (n, digits = 4) => Number.isFinite(n) ? Number(n).toFixed(digits).replace(/(\.[0-9]*?)0+$/, "$1").replace(/\.$/, "") : "-",
   };
 
   const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
@@ -454,19 +454,39 @@
     finishLoading();
   }
 
-  // Boot
+  async function waitForLibs(timeoutMs = 12000) {
+    const start = performance.now();
+    while (performance.now() - start < timeoutMs) {
+      if (typeof Sigma !== "undefined" && typeof graphology !== "undefined") return true;
+      await new Promise((r) => setTimeout(r, 60));
+    }
+    return false;
+  }
+
+  // Boot (GitHub Pages friendly: wait for CDN scripts, and show actionable errors)
   try {
     setProgress(0.05, "準備中");
-    // Ensure libs exist
-    if (typeof Sigma === "undefined" || typeof graphology === "undefined") {
-      setProgress(0.05, "載入前端函式庫…");
-      // If libraries are still loading, wait a tick
-      setTimeout(() => main(), 0);
-    } else {
-      main();
+
+    // Show early hint while waiting for external scripts
+    setProgress(0.08, "載入前端函式庫…");
+    const ok = await waitForLibs();
+
+    if (!ok) {
+      const missing = [
+        (typeof Sigma === "undefined") ? "sigma.js" : null,
+        (typeof graphology === "undefined") ? "graphology" : null,
+      ].filter(Boolean).join("、");
+
+      setProgress(0.12, `載入失敗：前端函式庫載入不到（${missing || "未知"}）`);
+      if (els.loadText) {
+        els.loadText.textContent += "。請檢查：1) 網路是否可連到cdnjs；2) 瀏覽器Console／Network是否有404；3) GitHub Pages是否被企業網路阻擋外部CDN。";
+      }
+      return;
     }
+
+    main();
   } catch (err) {
     console.error(err);
-    setProgress(0.10, "載入失敗：請開啟瀏覽器Console查看錯誤");
+    setProgress(0.12, "載入失敗：請開啟瀏覽器Console查看錯誤訊息");
   }
 })();
