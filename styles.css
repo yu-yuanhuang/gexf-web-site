@@ -240,6 +240,13 @@ button:hover {
   border-radius: 12px;
   font-size: 18px;
   box-shadow: var(--shadow);
+  background: var(--toolbar-btn-bg, rgba(0,0,0,0.75));
+  color: var(--toolbar-btn-fg, #ffffff);
+  border: 1px solid var(--toolbar-btn-border, rgba(255,255,255,0.18));
+}
+
+#graph-toolbar button:hover {
+  filter: brightness(1.05);
 }
 
 #graph-toolbar #reset {

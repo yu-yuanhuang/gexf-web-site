@@ -32,6 +32,22 @@
         </div>
 
         <div class="field">
+          <label>
+            <input type="checkbox" id="toggle-edges" checked />
+            <span id="toggle-edges-text">顯示：邊</span>
+          </label>
+        </div>
+
+        <div class="field">
+          <label for="edge-width">邊寬度（edge width）</label>
+          <div class="range-row">
+            <input type="range" id="edge-width" min="0.5" max="8" step="0.1" value="3" />
+            <div class="range-value" id="edge-width-val">3</div>
+          </div>
+          <div class="hint">調整線條粗細（僅影響視覺呈現，不改變資料）。</div>
+        </div>
+
+        <div class="field">
           <label for="edge-weight">邊權重門檻（weight）</label>
           <div class="range-row">
             <input type="range" id="edge-weight" min="0" max="1" step="0.01" value="0" />

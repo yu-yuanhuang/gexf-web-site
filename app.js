@@ -11,6 +11,12 @@
 
     toggleIsolates: $("toggle-isolates"),
 
+    toggleEdges: $("toggle-edges"),
+    toggleEdgesText: $("toggle-edges-text"),
+
+    edgeWidth: $("edge-width"),
+    edgeWidthVal: $("edge-width-val"),
+
     edgeWeight: $("edge-weight"),
     edgeWeightVal: $("edge-weight-val"),
     edgeWeightHint: $("edge-weight-hint"),
@@ -305,15 +311,23 @@
     // --- State ---
     const state = {
       showIsolates: true,
+      renderEdges: true,
+      edgeWidth: safeNumber(els.edgeWidth?.value, 3),
       edgeWeightThreshold: ranges.wMin,
       degreeThreshold: 0,
       wdegreeThreshold: 0,
       betweennessThreshold: 0,
       manualVisible: {},
       hoveredNode: null,
+      hoverNeighbors: null,
       tooltipVisible: false,
       visibleNodes: new Set(),
       visibleEdges: new Set(),
+      // label visibility (zoom-aware)
+      baseRatio: null,
+      labelPct: 0.70,
+      labelSet: new Set(),
+      nodeRank: [],
     };
     graph.forEachNode((n) => (state.manualVisible[n] = true));
 
@@ -378,6 +392,16 @@
       // set graph container background (canvases are transparent)
       if (els.container) els.container.style.background = appearance.bg;
 
+      // D. 右上角工具列按鈕：以背景對比色作為按鈕底色
+      const toolbar = document.getElementById("graph-toolbar");
+      if (toolbar) {
+        const contrastBg = isDarkHex(appearance.bg) ? "#ffffff" : "#000000";
+        const contrastFg = isDarkHex(contrastBg) ? "#ffffff" : "#000000";
+        toolbar.style.setProperty("--toolbar-btn-bg", contrastBg);
+        toolbar.style.setProperty("--toolbar-btn-fg", contrastFg);
+        toolbar.style.setProperty("--toolbar-btn-border", rgbaFromHex(contrastFg, 0.22));
+      }
+
       // show/hide custom color pickers
       if (els.customColors) {
         els.customColors.style.display = (appearance.mode === "custom") ? "grid" : "none";
@@ -389,6 +413,40 @@
 
     // Initial appearance
     applyAppearance(appearance.mode);
+
+    // --- Label ranking & zoom-aware label policy (C/D/E) ---
+    // Rank nodes by weighted degree (desc), then degree, then betweenness.
+    state.nodeRank = graph.nodes().slice().sort((a, b) => {
+      const A = graph.getNodeAttributes(a);
+      const B = graph.getNodeAttributes(b);
+      if (B.weightedDegree !== A.weightedDegree) return B.weightedDegree - A.weightedDegree;
+      if (B.degree !== A.degree) return B.degree - A.degree;
+      if (B.betweenness !== A.betweenness) return B.betweenness - A.betweenness;
+      return String(A.label || a).localeCompare(String(B.label || b), 'zh-Hant');
+    });
+
+    function labelPctFromZoomRatio(ratio) {
+      // Zoom in => camera ratio decreases. Use relative zoom vs. initial ratio.
+      if (!Number.isFinite(state.baseRatio) || state.baseRatio <= 0) return state.labelPct;
+      const zoom = state.baseRatio / ratio;
+      if (zoom >= 2.2) return 1.0;
+      if (zoom >= 1.6) return 0.9;
+      if (zoom >= 1.2) return 0.8;
+      return 0.7;
+    }
+
+    function updateLabelSet(pct) {
+      const p = clamp(safeNumber(pct, 0.70), 0.70, 1.0);
+      state.labelPct = p;
+      const rankedVisible = state.nodeRank.filter((n) => state.visibleNodes.has(n));
+      const n = rankedVisible.length;
+      const k = Math.max(0, Math.ceil(n * p));
+      state.labelSet = new Set(rankedVisible.slice(0, k));
+    }
+
+    function updateLabelsByZoom(ratio) {
+      updateLabelSet(labelPctFromZoomRatio(ratio));
+    }
 
     function recomputeVisibility() {
       const baseVisible = new Set();
@@ -422,9 +480,13 @@
       state.visibleNodes = vNodes;
       state.visibleEdges = vEdges;
 
+      // Update label set to reflect current visibility (C: 70% baseline; zoom-driven increments)
+      updateLabelSet(state.labelPct);
+
       const totalNodes = (bundle && Array.isArray(bundle.n)) ? bundle.n.length : graph.order;
       const totalEdges = (bundle && Array.isArray(bundle.e)) ? bundle.e.length : graph.size;
-      els.stats.textContent = `顯示節點：${vNodes.size}／${totalNodes}｜顯示邊：${vEdges.size}／${totalEdges}`;
+      const shownEdges = state.renderEdges ? vEdges.size : 0;
+      els.stats.textContent = `顯示節點：${vNodes.size}／${totalNodes}｜顯示邊：${shownEdges}／${totalEdges}｜標籤：${Math.round(state.labelPct * 100)}%`;
     }
 
     // --- Renderer ---
@@ -433,9 +495,9 @@
     const renderer = new Sigma(graph, els.container, {
       zIndex: true,
       renderLabels: true,
-      labelDensity: 0.07,
-      labelGridCellSize: 60,
-      labelRenderedSizeThreshold: 12,
+      labelDensity: 1,
+      labelGridCellSize: 40,
+      labelRenderedSizeThreshold: 0,
       labelFont: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans TC, Microsoft JhengHei, Arial",
       labelColor: { color: appearance.label },
 
@@ -449,9 +511,15 @@
         out.borderColor = appearance.border;
         out.borderSize = appearance.borderSize;
 
-        if (state.hoveredNode && node !== state.hoveredNode) {
+        const hasHover = !!state.hoveredNode;
+        const isHoverKeep = hasHover && state.hoverNeighbors && state.hoverNeighbors.has(node);
+
+        // C. 預設至少顯示70%標籤；縮放時顯示80／90／100%；E. hover時顯示所有連結節點標題
+        const shouldShowLabel = hasHover ? isHoverKeep : state.labelSet.has(node);
+        if (!shouldShowLabel) out.label = "";
+
+        if (hasHover && !isHoverKeep) {
           out.size = Math.max(1, out.size * 0.75);
-          out.label = "";
           out.zIndex = 0;
         } else {
           out.zIndex = 10;
@@ -460,6 +528,7 @@
       },
 
       edgeReducer: (edge, data) => {
+        if (!state.renderEdges) return { ...data, hidden: true };
         if (!state.visibleEdges.has(edge)) return { ...data, hidden: true };
         const out = { ...data };
 
@@ -467,20 +536,22 @@
         const far = rgbaFromHex(appearance.edge, appearance.edgeHoverFar);
         const near = rgbaFromHex(appearance.edge, appearance.edgeHoverNear);
 
+        const baseWidth = clamp(safeNumber(state.edgeWidth, 3), 0.2, 20);
+
         if (state.hoveredNode) {
           const s = graph.source(edge);
           const t = graph.target(edge);
           if (s !== state.hoveredNode && t !== state.hoveredNode) {
             out.color = far;
-            out.size = 0.5;
+            out.size = baseWidth * 0.5;
           } else {
             out.color = near;
-            out.size = 1.2;
+            out.size = baseWidth * 1.2;
           }
-          return out;
+        } else {
+          out.color = base;
+          out.size = baseWidth;
         }
-
-        out.color = base;
         return out;
       },
     });
@@ -513,6 +584,12 @@
 
     renderer.on("enterNode", ({ node }) => {
       state.hoveredNode = node;
+      // E. hover時顯示連結節點標題
+      try {
+        state.hoverNeighbors = new Set([node, ...graph.neighbors(node)]);
+      } catch (_) {
+        state.hoverNeighbors = new Set([node]);
+      }
       state.tooltipVisible = true;
       els.tooltip.innerHTML = makeTooltipHTML(node, graph);
       els.tooltip.style.display = "block";
@@ -522,6 +599,7 @@
 
     renderer.on("leaveNode", () => {
       state.hoveredNode = null;
+      state.hoverNeighbors = null;
       state.tooltipVisible = false;
       els.tooltip.style.display = "none";
       renderer.refresh();
@@ -530,6 +608,36 @@
     // --- Toolbar ---
     const camera = renderer.getCamera();
     const initialState = camera.getState();
+
+    // C. 標籤顯示比例：以初始ratio作為基準，縮放時70%→80%→90%→100%
+    state.baseRatio = initialState.ratio;
+    updateLabelsByZoom(initialState.ratio);
+    updateLabelSet(state.labelPct);
+
+    let lastPct = state.labelPct;
+    let zoomRaf = 0;
+    camera.on("updated", () => {
+      // 避免每一個滑動都重算：只在跨越門檻時更新
+      if (zoomRaf) return;
+      zoomRaf = requestAnimationFrame(() => {
+        zoomRaf = 0;
+        const r = camera.getState().ratio;
+        const nextPct = labelPctFromZoomRatio(r);
+        if (nextPct !== lastPct) {
+          lastPct = nextPct;
+          state.labelPct = nextPct;
+          updateLabelSet(nextPct);
+          // 更新右下角統計中的標籤百分比（節點/邊可視集合未變）
+          const totalNodes = (bundle && Array.isArray(bundle.n)) ? bundle.n.length : graph.order;
+          const totalEdges = (bundle && Array.isArray(bundle.e)) ? bundle.e.length : graph.size;
+          const shownEdges = state.renderEdges ? state.visibleEdges.size : 0;
+          if (els.stats) {
+            els.stats.textContent = `顯示節點：${state.visibleNodes.size}／${totalNodes}｜顯示邊：${shownEdges}／${totalEdges}｜標籤：${Math.round(state.labelPct * 100)}%`;
+          }
+          renderer.refresh();
+        }
+      });
+    });
 
     els.zoomIn.addEventListener("click", () => {
       const s = camera.getState();
@@ -551,14 +659,21 @@
       els.degreeVal.textContent = fmt.int(state.degreeThreshold);
       els.wdegreeVal.textContent = fmt.num(state.wdegreeThreshold, 3);
       els.betweennessVal.textContent = fmt.num(state.betweennessThreshold, 6);
+      if (els.edgeWidthVal) els.edgeWidthVal.textContent = fmt.num(state.edgeWidth, 2);
+      if (els.toggleEdgesText) els.toggleEdgesText.textContent = state.renderEdges ? "顯示：邊" : "不顯示：邊";
+
     }
 
     function applyFromControls() {
       state.showIsolates = !!els.toggleIsolates.checked;
+      state.renderEdges = !!els.toggleEdges.checked;
+      state.edgeWidth = safeNumber(els.edgeWidth.value, 3);
       state.edgeWeightThreshold = safeNumber(els.edgeWeight.value, ranges.wMin);
       state.degreeThreshold = safeNumber(els.degree.value, 0);
       state.wdegreeThreshold = safeNumber(els.wdegree.value, 0);
       state.betweennessThreshold = safeNumber(els.betweenness.value, 0);
+      // C. 依縮放比例更新標籤顯示比例（70/80/90/100%）
+      updateLabelsByZoom(camera.getState().ratio);
       syncNumbers();
       recomputeVisibility();
       renderer.refresh();
@@ -568,6 +683,16 @@
     applyFromControls();
 
     els.toggleIsolates.addEventListener("change", applyFromControls);
+
+    els.toggleEdges.addEventListener("change", applyFromControls);
+
+    // edge width: input previews thickness immediately; change persists
+    els.edgeWidth.addEventListener("input", () => {
+      state.edgeWidth = safeNumber(els.edgeWidth.value, 3);
+      syncNumbers();
+      renderer.refresh();
+    });
+    els.edgeWidth.addEventListener("change", applyFromControls);
 
     // sliders: input just previews number; change applies (better performance)
     const bindSlider = (el, setter) => {
