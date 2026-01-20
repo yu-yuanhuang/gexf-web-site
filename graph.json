@@ -1,0 +1,3029 @@
+{
+  "meta": {
+    "creator": "CorText",
+    "description": "hn-sna-sei-edu-woscc2001_2026top50-Keywords-Keywords-distributionalcooc-99999-oT0.25-99999-louTrue",
+    "defaultEdgeType": "undirected",
+    "mode": "static",
+    "timeformat": ""
+  },
+  "nodes": [
+    {
+      "id": "1",
+      "label": "ergms",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.12457496984,
+        "betweeness": 0.0,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 1.79073765818
+      }
+    },
+    {
+      "id": "2",
+      "label": "school turnaround",
+      "attributes": {
+        "weight": 6.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.614896252,
+        "betweeness": 0.0,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 1.90036632952
+      }
+    },
+    {
+      "id": "3",
+      "label": "communities of practice",
+      "attributes": {
+        "weight": 2.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.64785509149,
+        "betweeness": 0.0,
+        "community_orphan": 1.0,
+        "cluster_universal_index": 4.0,
+        "cluster_label": "communities of practice & teacher professional development",
+        "level": "low",
+        "cluster_index": 2.0,
+        "out-degree": 0.868463216116
+      }
+    },
+    {
+      "id": "4",
+      "label": "professional learning community",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.03194411381,
+        "betweeness": 0.0,
+        "community_orphan": 1.0,
+        "cluster_universal_index": 4.0,
+        "cluster_label": "communities of practice & teacher professional development",
+        "level": "low",
+        "cluster_index": 2.0,
+        "out-degree": 1.2470200772
+      }
+    },
+    {
+      "id": "5",
+      "label": "social capital",
+      "attributes": {
+        "weight": 15.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 3.06623905298,
+        "betweeness": 0.0409926875468,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 2.96285075914
+      }
+    },
+    {
+      "id": "6",
+      "label": "teacher leadership",
+      "attributes": {
+        "weight": 6.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.10249046404,
+        "betweeness": 0.0686093123651,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 2.51148171145
+      }
+    },
+    {
+      "id": "7",
+      "label": "mathematics teaching",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.45024442764,
+        "betweeness": 0.00385445575085,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 1.64965995746
+      }
+    },
+    {
+      "id": "8",
+      "label": "inspections",
+      "attributes": {
+        "weight": 5.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.99104050708,
+        "betweeness": 0.000231267345051,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 0.321681953565
+      }
+    },
+    {
+      "id": "9",
+      "label": "improvement",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.34472220606,
+        "betweeness": 0.0,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 0.646732103811
+      }
+    },
+    {
+      "id": "10",
+      "label": "networks",
+      "attributes": {
+        "weight": 25.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 3.78745617849,
+        "betweeness": 0.167023479142,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 4.1526101675
+      }
+    },
+    {
+      "id": "11",
+      "label": "mixed methods",
+      "attributes": {
+        "weight": 8.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.71386336108,
+        "betweeness": 0.0703052728955,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 3.73096840269
+      }
+    },
+    {
+      "id": "12",
+      "label": "teacher collaboration",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.12610532204,
+        "betweeness": 0.0185013876041,
+        "community_orphan": 1.0,
+        "cluster_universal_index": 4.0,
+        "cluster_label": "communities of practice & teacher professional development",
+        "level": "low",
+        "cluster_index": 2.0,
+        "out-degree": 0.461369710893
+      }
+    },
+    {
+      "id": "13",
+      "label": "school reform",
+      "attributes": {
+        "weight": 16.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.262154170659,
+        "betweeness": 0.0333024976873,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 3.0092459553
+      }
+    },
+    {
+      "id": "14",
+      "label": "networking",
+      "attributes": {
+        "weight": 8.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.52784346948,
+        "betweeness": 0.0582793709528,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 2.51809610933
+      }
+    },
+    {
+      "id": "15",
+      "label": "school networks",
+      "attributes": {
+        "weight": 10.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.681859741059,
+        "betweeness": 0.0198889916744,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 1.09966716281
+      }
+    },
+    {
+      "id": "16",
+      "label": "reform",
+      "attributes": {
+        "weight": 2.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.47247960866,
+        "betweeness": 0.0,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 1.0
+      }
+    },
+    {
+      "id": "17",
+      "label": "improvement science",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 3.14107828923,
+        "betweeness": 0.00619796484736,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 2.84406353865
+      }
+    },
+    {
+      "id": "18",
+      "label": "brokerage",
+      "attributes": {
+        "weight": 5.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.80847994485,
+        "betweeness": 0.0,
+        "community_orphan": 5.0,
+        "cluster_universal_index": 1.0,
+        "cluster_label": "knowledge mobilization & brokerage",
+        "level": "low",
+        "cluster_index": 5.0,
+        "out-degree": 1.73400988682
+      }
+    },
+    {
+      "id": "19",
+      "label": "charter schools",
+      "attributes": {
+        "weight": 2.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.47247960866,
+        "betweeness": 0.0,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 1.0
+      }
+    },
+    {
+      "id": "20",
+      "label": "accountability",
+      "attributes": {
+        "weight": 13.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.984709925187,
+        "betweeness": 0.0446345975948,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 2.24763807946
+      }
+    },
+    {
+      "id": "21",
+      "label": "case study",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.58485283004,
+        "betweeness": 0.127428307123,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 2.86631208506
+      }
+    },
+    {
+      "id": "22",
+      "label": "social networks",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.50666537598,
+        "betweeness": 0.00508788159112,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 2.19460994392
+      }
+    },
+    {
+      "id": "23",
+      "label": "innovation",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.372081349637,
+        "betweeness": 0.0,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 0.0
+      }
+    },
+    {
+      "id": "24",
+      "label": "educational change",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.77998020023,
+        "betweeness": 0.0148781991983,
+        "community_orphan": 5.0,
+        "cluster_universal_index": 1.0,
+        "cluster_label": "knowledge mobilization & brokerage",
+        "level": "low",
+        "cluster_index": 5.0,
+        "out-degree": 1.98027264646
+      }
+    },
+    {
+      "id": "25",
+      "label": "professional development",
+      "attributes": {
+        "weight": 15.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.81543183495,
+        "betweeness": 0.177613320999,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 2.66797896243
+      }
+    },
+    {
+      "id": "26",
+      "label": "school change",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.53731689872,
+        "betweeness": 0.0,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 0.295537407344
+      }
+    },
+    {
+      "id": "27",
+      "label": "teacher networks",
+      "attributes": {
+        "weight": 6.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.38782559761,
+        "betweeness": 0.00385445575085,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 1.86637867059
+      }
+    },
+    {
+      "id": "28",
+      "label": "professional learning networks",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.461369710893,
+        "betweeness": 0.0,
+        "community_orphan": 1.0,
+        "cluster_universal_index": 4.0,
+        "cluster_label": "communities of practice & teacher professional development",
+        "level": "low",
+        "cluster_index": 2.0,
+        "out-degree": 0.558827720223
+      }
+    },
+    {
+      "id": "29",
+      "label": "professional capital",
+      "attributes": {
+        "weight": 13.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.85056723427,
+        "betweeness": 0.12401766442,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 2.13286755237
+      }
+    },
+    {
+      "id": "30",
+      "label": "educational improvement",
+      "attributes": {
+        "weight": 8.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.39376140444,
+        "betweeness": 0.12138231796,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 2.30205509319
+      }
+    },
+    {
+      "id": "31",
+      "label": "social network analysis",
+      "attributes": {
+        "weight": 23.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.258169407215,
+        "betweeness": 0.0333024976873,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 2.39902715802
+      }
+    },
+    {
+      "id": "32",
+      "label": "collaboration",
+      "attributes": {
+        "weight": 29.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 3.50421001889,
+        "betweeness": 0.0697028765253,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 3.31847897777
+      }
+    },
+    {
+      "id": "33",
+      "label": "networked improvement communities",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 3.14107828923,
+        "betweeness": 0.00619796484736,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 2.84406353865
+      }
+    },
+    {
+      "id": "34",
+      "label": "leadership",
+      "attributes": {
+        "weight": 21.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.10112243837,
+        "betweeness": 0.030392934232,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 2.49379110381
+      }
+    },
+    {
+      "id": "35",
+      "label": "knowledge mobilization",
+      "attributes": {
+        "weight": 7.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.76007499863,
+        "betweeness": 0.0594841636932,
+        "community_orphan": 5.0,
+        "cluster_universal_index": 1.0,
+        "cluster_label": "knowledge mobilization & brokerage",
+        "level": "low",
+        "cluster_index": 5.0,
+        "out-degree": 2.95897742234
+      }
+    },
+    {
+      "id": "36",
+      "label": "change",
+      "attributes": {
+        "weight": 3.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.689968491871,
+        "betweeness": 0.0,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 0.716037959411
+      }
+    },
+    {
+      "id": "37",
+      "label": "professional learning communities",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.36980829379,
+        "betweeness": 0.0,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 1.65112514508
+      }
+    },
+    {
+      "id": "38",
+      "label": "network analysis",
+      "attributes": {
+        "weight": 3.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.62087888387,
+        "betweeness": 0.0,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 0.552597248905
+      }
+    },
+    {
+      "id": "39",
+      "label": "difference-in-differences",
+      "attributes": {
+        "weight": 6.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.614896252,
+        "betweeness": 0.0,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 1.90036632952
+      }
+    },
+    {
+      "id": "40",
+      "label": "educational reform",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.895739762035,
+        "betweeness": 0.0,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 0.814790987723
+      }
+    },
+    {
+      "id": "41",
+      "label": "capacity building",
+      "attributes": {
+        "weight": 5.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.75213808141,
+        "betweeness": 0.0,
+        "community_orphan": 5.0,
+        "cluster_universal_index": 1.0,
+        "cluster_label": "knowledge mobilization & brokerage",
+        "level": "low",
+        "cluster_index": 5.0,
+        "out-degree": 1.55081663616
+      }
+    },
+    {
+      "id": "42",
+      "label": "school improvement",
+      "attributes": {
+        "weight": 28.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.618427019982,
+        "betweeness": 0.169518963922,
+        "community_orphan": 3.0,
+        "cluster_universal_index": 2.0,
+        "cluster_label": "case study & mixed methods",
+        "level": "low",
+        "cluster_index": 0.0,
+        "out-degree": 3.22188646478
+      }
+    },
+    {
+      "id": "43",
+      "label": "professionalism",
+      "attributes": {
+        "weight": 9.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.76930812148,
+        "betweeness": 0.0507411567772,
+        "community_orphan": 2.0,
+        "cluster_universal_index": 3.0,
+        "cluster_label": "collaboration & networks",
+        "level": "low",
+        "cluster_index": 1.0,
+        "out-degree": 1.19589274498
+      }
+    },
+    {
+      "id": "44",
+      "label": "educational leadership",
+      "attributes": {
+        "weight": 11.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.40680410149,
+        "betweeness": 0.086509404872,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 3.48264487638
+      }
+    },
+    {
+      "id": "45",
+      "label": "teacher professional development",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.799749133646,
+        "betweeness": 0.00185013876041,
+        "community_orphan": 1.0,
+        "cluster_universal_index": 4.0,
+        "cluster_label": "communities of practice & teacher professional development",
+        "level": "low",
+        "cluster_index": 2.0,
+        "out-degree": 1.62955718701
+      }
+    },
+    {
+      "id": "46",
+      "label": "educational equity",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 2.70224936095,
+        "betweeness": 0.0,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 1.67196034262
+      }
+    },
+    {
+      "id": "47",
+      "label": "hong kong",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 0.634147124753,
+        "betweeness": 0.0,
+        "community_orphan": 6.0,
+        "cluster_universal_index": 5.0,
+        "cluster_label": "teacher networks & teacher leadership",
+        "level": "low",
+        "cluster_index": 3.0,
+        "out-degree": 0.0
+      }
+    },
+    {
+      "id": "48",
+      "label": "neoliberalism",
+      "attributes": {
+        "weight": 4.0,
+        "period": 20012026.0,
+        "category": "category",
+        "in-degree": 1.18101386431,
+        "betweeness": 0.0,
+        "community_orphan": 4.0,
+        "cluster_universal_index": 0.0,
+        "cluster_label": "improvement science & networked improvement communities",
+        "level": "low",
+        "cluster_index": 4.0,
+        "out-degree": 0.898635800368
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "1",
+      "source": "1",
+      "target": "22",
+      "weight": 0.641400702437,
+      "attributes": {
+        "0": "low",
+        "1": 22.0,
+        "2": 1.0,
+        "3": 0.641400702437
+      }
+    },
+    {
+      "id": "2",
+      "source": "1",
+      "target": "11",
+      "weight": 0.705261616572,
+      "attributes": {
+        "0": "low",
+        "1": 11.0,
+        "2": 1.0,
+        "3": 0.705261616572
+      }
+    },
+    {
+      "id": "3",
+      "source": "1",
+      "target": "37",
+      "weight": 0.777912650829,
+      "attributes": {
+        "0": "low",
+        "1": 37.0,
+        "2": 1.0,
+        "3": 0.777912650829
+      }
+    },
+    {
+      "id": "4",
+      "source": "2",
+      "target": "39",
+      "weight": 1.0,
+      "attributes": {
+        "0": "low",
+        "1": 39.0,
+        "2": 2.0,
+        "3": 1.0
+      }
+    },
+    {
+      "id": "5",
+      "source": "2",
+      "target": "42",
+      "weight": 0.325284033861,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 2.0,
+        "3": 0.325284033861
+      }
+    },
+    {
+      "id": "6",
+      "source": "2",
+      "target": "11",
+      "weight": 0.611784257718,
+      "attributes": {
+        "0": "low",
+        "1": 11.0,
+        "2": 2.0,
+        "3": 0.611784257718
+      }
+    },
+    {
+      "id": "7",
+      "source": "2",
+      "target": "21",
+      "weight": 0.677827960417,
+      "attributes": {
+        "0": "low",
+        "1": 21.0,
+        "2": 2.0,
+        "3": 0.677827960417
+      }
+    },
+    {
+      "id": "8",
+      "source": "3",
+      "target": "4",
+      "weight": 0.823927545747,
+      "attributes": {
+        "0": "low",
+        "1": 4.0,
+        "2": 3.0,
+        "3": 0.823927545747
+      }
+    },
+    {
+      "id": "9",
+      "source": "3",
+      "target": "45",
+      "weight": 0.823927545747,
+      "attributes": {
+        "0": "low",
+        "1": 45.0,
+        "2": 3.0,
+        "3": 0.823927545747
+      }
+    },
+    {
+      "id": "10",
+      "source": "4",
+      "target": "3",
+      "weight": 0.491806613924,
+      "attributes": {
+        "0": "low",
+        "1": 3.0,
+        "2": 4.0,
+        "3": 0.491806613924
+      }
+    },
+    {
+      "id": "11",
+      "source": "4",
+      "target": "45",
+      "weight": 0.540137499886,
+      "attributes": {
+        "0": "low",
+        "1": 45.0,
+        "2": 4.0,
+        "3": 0.540137499886
+      }
+    },
+    {
+      "id": "12",
+      "source": "5",
+      "target": "14",
+      "weight": 0.360441911919,
+      "attributes": {
+        "0": "low",
+        "1": 14.0,
+        "2": 5.0,
+        "3": 0.360441911919
+      }
+    },
+    {
+      "id": "13",
+      "source": "5",
+      "target": "29",
+      "weight": 0.457645653205,
+      "attributes": {
+        "0": "low",
+        "1": 29.0,
+        "2": 5.0,
+        "3": 0.457645653205
+      }
+    },
+    {
+      "id": "14",
+      "source": "5",
+      "target": "32",
+      "weight": 0.387077814131,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 5.0,
+        "3": 0.387077814131
+      }
+    },
+    {
+      "id": "15",
+      "source": "5",
+      "target": "34",
+      "weight": 0.447813226367,
+      "attributes": {
+        "0": "low",
+        "1": 34.0,
+        "2": 5.0,
+        "3": 0.447813226367
+      }
+    },
+    {
+      "id": "16",
+      "source": "5",
+      "target": "35",
+      "weight": 0.501507168125,
+      "attributes": {
+        "0": "low",
+        "1": 35.0,
+        "2": 5.0,
+        "3": 0.501507168125
+      }
+    },
+    {
+      "id": "17",
+      "source": "5",
+      "target": "10",
+      "weight": 0.444724162469,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 5.0,
+        "3": 0.444724162469
+      }
+    },
+    {
+      "id": "18",
+      "source": "5",
+      "target": "25",
+      "weight": 0.467029116759,
+      "attributes": {
+        "0": "low",
+        "1": 25.0,
+        "2": 5.0,
+        "3": 0.467029116759
+      }
+    },
+    {
+      "id": "19",
+      "source": "6",
+      "target": "31",
+      "weight": 0.462360033544,
+      "attributes": {
+        "0": "low",
+        "1": 31.0,
+        "2": 6.0,
+        "3": 0.462360033544
+      }
+    },
+    {
+      "id": "20",
+      "source": "6",
+      "target": "27",
+      "weight": 0.657294227818,
+      "attributes": {
+        "0": "low",
+        "1": 27.0,
+        "2": 6.0,
+        "3": 0.657294227818
+      }
+    },
+    {
+      "id": "21",
+      "source": "6",
+      "target": "25",
+      "weight": 0.347608573426,
+      "attributes": {
+        "0": "low",
+        "1": 25.0,
+        "2": 6.0,
+        "3": 0.347608573426
+      }
+    },
+    {
+      "id": "22",
+      "source": "6",
+      "target": "7",
+      "weight": 0.635227629256,
+      "attributes": {
+        "0": "low",
+        "1": 7.0,
+        "2": 6.0,
+        "3": 0.635227629256
+      }
+    },
+    {
+      "id": "23",
+      "source": "7",
+      "target": "31",
+      "weight": 0.286628248186,
+      "attributes": {
+        "0": "low",
+        "1": 31.0,
+        "2": 7.0,
+        "3": 0.286628248186
+      }
+    },
+    {
+      "id": "24",
+      "source": "7",
+      "target": "27",
+      "weight": 0.870340050091,
+      "attributes": {
+        "0": "low",
+        "1": 27.0,
+        "2": 7.0,
+        "3": 0.870340050091
+      }
+    },
+    {
+      "id": "25",
+      "source": "7",
+      "target": "6",
+      "weight": 0.870340050091,
+      "attributes": {
+        "0": "low",
+        "1": 6.0,
+        "2": 7.0,
+        "3": 0.870340050091
+      }
+    },
+    {
+      "id": "26",
+      "source": "7",
+      "target": "25",
+      "weight": 0.422936079277,
+      "attributes": {
+        "0": "low",
+        "1": 25.0,
+        "2": 7.0,
+        "3": 0.422936079277
+      }
+    },
+    {
+      "id": "27",
+      "source": "8",
+      "target": "42",
+      "weight": 0.429865909638,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 8.0,
+        "3": 0.429865909638
+      }
+    },
+    {
+      "id": "28",
+      "source": "8",
+      "target": "15",
+      "weight": 0.807962245158,
+      "attributes": {
+        "0": "low",
+        "1": 15.0,
+        "2": 8.0,
+        "3": 0.807962245158
+      }
+    },
+    {
+      "id": "29",
+      "source": "8",
+      "target": "20",
+      "weight": 0.753212352283,
+      "attributes": {
+        "0": "low",
+        "1": 20.0,
+        "2": 8.0,
+        "3": 0.753212352283
+      }
+    },
+    {
+      "id": "30",
+      "source": "9",
+      "target": "43",
+      "weight": 0.487516485787,
+      "attributes": {
+        "0": "low",
+        "1": 43.0,
+        "2": 9.0,
+        "3": 0.487516485787
+      }
+    },
+    {
+      "id": "31",
+      "source": "9",
+      "target": "32",
+      "weight": 0.439612352917,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 9.0,
+        "3": 0.439612352917
+      }
+    },
+    {
+      "id": "32",
+      "source": "9",
+      "target": "10",
+      "weight": 0.417593367353,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 9.0,
+        "3": 0.417593367353
+      }
+    },
+    {
+      "id": "33",
+      "source": "10",
+      "target": "5",
+      "weight": 0.421181865757,
+      "attributes": {
+        "0": "low",
+        "1": 5.0,
+        "2": 10.0,
+        "3": 0.421181865757
+      }
+    },
+    {
+      "id": "34",
+      "source": "10",
+      "target": "14",
+      "weight": 0.28601171204,
+      "attributes": {
+        "0": "low",
+        "1": 14.0,
+        "2": 10.0,
+        "3": 0.28601171204
+      }
+    },
+    {
+      "id": "35",
+      "source": "10",
+      "target": "29",
+      "weight": 0.367226699947,
+      "attributes": {
+        "0": "low",
+        "1": 29.0,
+        "2": 10.0,
+        "3": 0.367226699947
+      }
+    },
+    {
+      "id": "36",
+      "source": "10",
+      "target": "30",
+      "weight": 0.322054787704,
+      "attributes": {
+        "0": "low",
+        "1": 30.0,
+        "2": 10.0,
+        "3": 0.322054787704
+      }
+    },
+    {
+      "id": "37",
+      "source": "10",
+      "target": "44",
+      "weight": 0.276564630692,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 10.0,
+        "3": 0.276564630692
+      }
+    },
+    {
+      "id": "38",
+      "source": "10",
+      "target": "32",
+      "weight": 0.708813695373,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 10.0,
+        "3": 0.708813695373
+      }
+    },
+    {
+      "id": "39",
+      "source": "10",
+      "target": "43",
+      "weight": 0.360643483962,
+      "attributes": {
+        "0": "low",
+        "1": 43.0,
+        "2": 10.0,
+        "3": 0.360643483962
+      }
+    },
+    {
+      "id": "40",
+      "source": "10",
+      "target": "34",
+      "weight": 0.411152789259,
+      "attributes": {
+        "0": "low",
+        "1": 34.0,
+        "2": 10.0,
+        "3": 0.411152789259
+      }
+    },
+    {
+      "id": "41",
+      "source": "10",
+      "target": "35",
+      "weight": 0.315639897517,
+      "attributes": {
+        "0": "low",
+        "1": 35.0,
+        "2": 10.0,
+        "3": 0.315639897517
+      }
+    },
+    {
+      "id": "42",
+      "source": "10",
+      "target": "25",
+      "weight": 0.318166616237,
+      "attributes": {
+        "0": "low",
+        "1": 25.0,
+        "2": 10.0,
+        "3": 0.318166616237
+      }
+    },
+    {
+      "id": "43",
+      "source": "11",
+      "target": "1",
+      "weight": 0.431893189991,
+      "attributes": {
+        "0": "low",
+        "1": 1.0,
+        "2": 11.0,
+        "3": 0.431893189991
+      }
+    },
+    {
+      "id": "44",
+      "source": "11",
+      "target": "2",
+      "weight": 0.378462836899,
+      "attributes": {
+        "0": "low",
+        "1": 2.0,
+        "2": 11.0,
+        "3": 0.378462836899
+      }
+    },
+    {
+      "id": "45",
+      "source": "11",
+      "target": "39",
+      "weight": 0.378462836899,
+      "attributes": {
+        "0": "low",
+        "1": 39.0,
+        "2": 11.0,
+        "3": 0.378462836899
+      }
+    },
+    {
+      "id": "46",
+      "source": "11",
+      "target": "37",
+      "weight": 0.397430916877,
+      "attributes": {
+        "0": "low",
+        "1": 37.0,
+        "2": 11.0,
+        "3": 0.397430916877
+      }
+    },
+    {
+      "id": "47",
+      "source": "11",
+      "target": "21",
+      "weight": 0.386019325946,
+      "attributes": {
+        "0": "low",
+        "1": 21.0,
+        "2": 11.0,
+        "3": 0.386019325946
+      }
+    },
+    {
+      "id": "48",
+      "source": "11",
+      "target": "22",
+      "weight": 0.460508270491,
+      "attributes": {
+        "0": "low",
+        "1": 22.0,
+        "2": 11.0,
+        "3": 0.460508270491
+      }
+    },
+    {
+      "id": "49",
+      "source": "11",
+      "target": "42",
+      "weight": 0.281085983981,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 11.0,
+        "3": 0.281085983981
+      }
+    },
+    {
+      "id": "50",
+      "source": "12",
+      "target": "28",
+      "weight": 0.558827720223,
+      "attributes": {
+        "0": "low",
+        "1": 28.0,
+        "2": 12.0,
+        "3": 0.558827720223
+      }
+    },
+    {
+      "id": "51",
+      "source": "12",
+      "target": "45",
+      "weight": 0.265492141379,
+      "attributes": {
+        "0": "low",
+        "1": 45.0,
+        "2": 12.0,
+        "3": 0.265492141379
+      }
+    },
+    {
+      "id": "52",
+      "source": "12",
+      "target": "25",
+      "weight": 0.301785460439,
+      "attributes": {
+        "0": "low",
+        "1": 25.0,
+        "2": 12.0,
+        "3": 0.301785460439
+      }
+    },
+    {
+      "id": "53",
+      "source": "13",
+      "target": "44",
+      "weight": 0.262154170659,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 13.0,
+        "3": 0.262154170659
+      }
+    },
+    {
+      "id": "54",
+      "source": "14",
+      "target": "5",
+      "weight": 0.372079237998,
+      "attributes": {
+        "0": "low",
+        "1": 5.0,
+        "2": 14.0,
+        "3": 0.372079237998
+      }
+    },
+    {
+      "id": "55",
+      "source": "14",
+      "target": "40",
+      "weight": 0.453669445972,
+      "attributes": {
+        "0": "low",
+        "1": 40.0,
+        "2": 14.0,
+        "3": 0.453669445972
+      }
+    },
+    {
+      "id": "56",
+      "source": "14",
+      "target": "29",
+      "weight": 0.323536205867,
+      "attributes": {
+        "0": "low",
+        "1": 29.0,
+        "2": 14.0,
+        "3": 0.323536205867
+      }
+    },
+    {
+      "id": "57",
+      "source": "14",
+      "target": "32",
+      "weight": 0.317270881015,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 14.0,
+        "3": 0.317270881015
+      }
+    },
+    {
+      "id": "58",
+      "source": "14",
+      "target": "34",
+      "weight": 0.428715116635,
+      "attributes": {
+        "0": "low",
+        "1": 34.0,
+        "2": 14.0,
+        "3": 0.428715116635
+      }
+    },
+    {
+      "id": "59",
+      "source": "14",
+      "target": "10",
+      "weight": 0.31115101424,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 14.0,
+        "3": 0.31115101424
+      }
+    },
+    {
+      "id": "60",
+      "source": "14",
+      "target": "36",
+      "weight": 0.321421567756,
+      "attributes": {
+        "0": "low",
+        "1": 36.0,
+        "2": 14.0,
+        "3": 0.321421567756
+      }
+    },
+    {
+      "id": "61",
+      "source": "15",
+      "target": "8",
+      "weight": 0.321681953565,
+      "attributes": {
+        "0": "low",
+        "1": 8.0,
+        "2": 15.0,
+        "3": 0.321681953565
+      }
+    },
+    {
+      "id": "62",
+      "source": "15",
+      "target": "20",
+      "weight": 0.360177787493,
+      "attributes": {
+        "0": "low",
+        "1": 20.0,
+        "2": 15.0,
+        "3": 0.360177787493
+      }
+    },
+    {
+      "id": "63",
+      "source": "16",
+      "target": "31",
+      "weight": 0.472479608657,
+      "attributes": {
+        "0": "low",
+        "1": 31.0,
+        "2": 16.0,
+        "3": 0.472479608657
+      }
+    },
+    {
+      "id": "64",
+      "source": "16",
+      "target": "19",
+      "weight": 1.0,
+      "attributes": {
+        "0": "low",
+        "1": 19.0,
+        "2": 16.0,
+        "3": 1.0
+      }
+    },
+    {
+      "id": "65",
+      "source": "17",
+      "target": "13",
+      "weight": 0.392588861735,
+      "attributes": {
+        "0": "low",
+        "1": 13.0,
+        "2": 17.0,
+        "3": 0.392588861735
+      }
+    },
+    {
+      "id": "66",
+      "source": "17",
+      "target": "46",
+      "weight": 0.642202089062,
+      "attributes": {
+        "0": "low",
+        "1": 46.0,
+        "2": 17.0,
+        "3": 0.642202089062
+      }
+    },
+    {
+      "id": "67",
+      "source": "17",
+      "target": "33",
+      "weight": 1.0,
+      "attributes": {
+        "0": "low",
+        "1": 33.0,
+        "2": 17.0,
+        "3": 1.0
+      }
+    },
+    {
+      "id": "68",
+      "source": "17",
+      "target": "44",
+      "weight": 0.640694072913,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 17.0,
+        "3": 0.640694072913
+      }
+    },
+    {
+      "id": "69",
+      "source": "17",
+      "target": "30",
+      "weight": 0.465593265517,
+      "attributes": {
+        "0": "low",
+        "1": 30.0,
+        "2": 17.0,
+        "3": 0.465593265517
+      }
+    },
+    {
+      "id": "70",
+      "source": "18",
+      "target": "35",
+      "weight": 0.687122856125,
+      "attributes": {
+        "0": "low",
+        "1": 35.0,
+        "2": 18.0,
+        "3": 0.687122856125
+      }
+    },
+    {
+      "id": "71",
+      "source": "18",
+      "target": "41",
+      "weight": 0.591614864364,
+      "attributes": {
+        "0": "low",
+        "1": 41.0,
+        "2": 18.0,
+        "3": 0.591614864364
+      }
+    },
+    {
+      "id": "72",
+      "source": "18",
+      "target": "24",
+      "weight": 0.529742224358,
+      "attributes": {
+        "0": "low",
+        "1": 24.0,
+        "2": 18.0,
+        "3": 0.529742224358
+      }
+    },
+    {
+      "id": "73",
+      "source": "19",
+      "target": "31",
+      "weight": 0.472479608657,
+      "attributes": {
+        "0": "low",
+        "1": 31.0,
+        "2": 19.0,
+        "3": 0.472479608657
+      }
+    },
+    {
+      "id": "74",
+      "source": "19",
+      "target": "16",
+      "weight": 1.0,
+      "attributes": {
+        "0": "low",
+        "1": 16.0,
+        "2": 19.0,
+        "3": 1.0
+      }
+    },
+    {
+      "id": "75",
+      "source": "20",
+      "target": "21",
+      "weight": 0.258262595736,
+      "attributes": {
+        "0": "low",
+        "1": 21.0,
+        "2": 20.0,
+        "3": 0.258262595736
+      }
+    },
+    {
+      "id": "76",
+      "source": "20",
+      "target": "42",
+      "weight": 0.434742411795,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 20.0,
+        "3": 0.434742411795
+      }
+    },
+    {
+      "id": "77",
+      "source": "20",
+      "target": "15",
+      "weight": 0.291704917656,
+      "attributes": {
+        "0": "low",
+        "1": 15.0,
+        "2": 20.0,
+        "3": 0.291704917656
+      }
+    },
+    {
+      "id": "78",
+      "source": "21",
+      "target": "39",
+      "weight": 0.521903492617,
+      "attributes": {
+        "0": "low",
+        "1": 39.0,
+        "2": 21.0,
+        "3": 0.521903492617
+      }
+    },
+    {
+      "id": "79",
+      "source": "21",
+      "target": "2",
+      "weight": 0.521903492617,
+      "attributes": {
+        "0": "low",
+        "1": 2.0,
+        "2": 21.0,
+        "3": 0.521903492617
+      }
+    },
+    {
+      "id": "80",
+      "source": "21",
+      "target": "26",
+      "weight": 0.295537407344,
+      "attributes": {
+        "0": "low",
+        "1": 26.0,
+        "2": 21.0,
+        "3": 0.295537407344
+      }
+    },
+    {
+      "id": "81",
+      "source": "21",
+      "target": "20",
+      "weight": 0.307845143219,
+      "attributes": {
+        "0": "low",
+        "1": 20.0,
+        "2": 21.0,
+        "3": 0.307845143219
+      }
+    },
+    {
+      "id": "82",
+      "source": "21",
+      "target": "42",
+      "weight": 0.456753026421,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 21.0,
+        "3": 0.456753026421
+      }
+    },
+    {
+      "id": "83",
+      "source": "21",
+      "target": "11",
+      "weight": 0.480910267825,
+      "attributes": {
+        "0": "low",
+        "1": 11.0,
+        "2": 21.0,
+        "3": 0.480910267825
+      }
+    },
+    {
+      "id": "84",
+      "source": "22",
+      "target": "1",
+      "weight": 0.475781577374,
+      "attributes": {
+        "0": "low",
+        "1": 1.0,
+        "2": 22.0,
+        "3": 0.475781577374
+      }
+    },
+    {
+      "id": "85",
+      "source": "22",
+      "target": "11",
+      "weight": 0.555102221232,
+      "attributes": {
+        "0": "low",
+        "1": 11.0,
+        "2": 22.0,
+        "3": 0.555102221232
+      }
+    },
+    {
+      "id": "86",
+      "source": "22",
+      "target": "37",
+      "weight": 0.475781577374,
+      "attributes": {
+        "0": "low",
+        "1": 37.0,
+        "2": 22.0,
+        "3": 0.475781577374
+      }
+    },
+    {
+      "id": "87",
+      "source": "23",
+      "target": "22",
+      "weight": 0.372081349637,
+      "attributes": {
+        "0": "low",
+        "1": 22.0,
+        "2": 23.0,
+        "3": 0.372081349637
+      }
+    },
+    {
+      "id": "88",
+      "source": "24",
+      "target": "18",
+      "weight": 0.467746721972,
+      "attributes": {
+        "0": "low",
+        "1": 18.0,
+        "2": 24.0,
+        "3": 0.467746721972
+      }
+    },
+    {
+      "id": "89",
+      "source": "24",
+      "target": "41",
+      "weight": 0.467746721972,
+      "attributes": {
+        "0": "low",
+        "1": 41.0,
+        "2": 24.0,
+        "3": 0.467746721972
+      }
+    },
+    {
+      "id": "90",
+      "source": "24",
+      "target": "30",
+      "weight": 0.275107753016,
+      "attributes": {
+        "0": "low",
+        "1": 30.0,
+        "2": 24.0,
+        "3": 0.275107753016
+      }
+    },
+    {
+      "id": "91",
+      "source": "24",
+      "target": "35",
+      "weight": 0.569379003275,
+      "attributes": {
+        "0": "low",
+        "1": 35.0,
+        "2": 24.0,
+        "3": 0.569379003275
+      }
+    },
+    {
+      "id": "92",
+      "source": "25",
+      "target": "5",
+      "weight": 0.381302191947,
+      "attributes": {
+        "0": "low",
+        "1": 5.0,
+        "2": 25.0,
+        "3": 0.381302191947
+      }
+    },
+    {
+      "id": "93",
+      "source": "25",
+      "target": "32",
+      "weight": 0.270226676428,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 25.0,
+        "3": 0.270226676428
+      }
+    },
+    {
+      "id": "94",
+      "source": "25",
+      "target": "27",
+      "weight": 0.338744392677,
+      "attributes": {
+        "0": "low",
+        "1": 27.0,
+        "2": 25.0,
+        "3": 0.338744392677
+      }
+    },
+    {
+      "id": "95",
+      "source": "25",
+      "target": "6",
+      "weight": 0.288408843665,
+      "attributes": {
+        "0": "low",
+        "1": 6.0,
+        "2": 25.0,
+        "3": 0.288408843665
+      }
+    },
+    {
+      "id": "96",
+      "source": "25",
+      "target": "7",
+      "weight": 0.263353814616,
+      "attributes": {
+        "0": "low",
+        "1": 7.0,
+        "2": 25.0,
+        "3": 0.263353814616
+      }
+    },
+    {
+      "id": "97",
+      "source": "25",
+      "target": "10",
+      "weight": 0.273395915618,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 25.0,
+        "3": 0.273395915618
+      }
+    },
+    {
+      "id": "98",
+      "source": "26",
+      "target": "21",
+      "weight": 0.5771032299,
+      "attributes": {
+        "0": "low",
+        "1": 21.0,
+        "2": 26.0,
+        "3": 0.5771032299
+      }
+    },
+    {
+      "id": "99",
+      "source": "26",
+      "target": "42",
+      "weight": 0.462966879697,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 26.0,
+        "3": 0.462966879697
+      }
+    },
+    {
+      "id": "100",
+      "source": "26",
+      "target": "20",
+      "weight": 0.497246789123,
+      "attributes": {
+        "0": "low",
+        "1": 20.0,
+        "2": 26.0,
+        "3": 0.497246789123
+      }
+    },
+    {
+      "id": "101",
+      "source": "27",
+      "target": "31",
+      "weight": 0.383371298666,
+      "attributes": {
+        "0": "low",
+        "1": 31.0,
+        "2": 27.0,
+        "3": 0.383371298666
+      }
+    },
+    {
+      "id": "102",
+      "source": "27",
+      "target": "6",
+      "weight": 0.782124646037,
+      "attributes": {
+        "0": "low",
+        "1": 6.0,
+        "2": 27.0,
+        "3": 0.782124646037
+      }
+    },
+    {
+      "id": "103",
+      "source": "27",
+      "target": "25",
+      "weight": 0.471251139326,
+      "attributes": {
+        "0": "low",
+        "1": 25.0,
+        "2": 27.0,
+        "3": 0.471251139326
+      }
+    },
+    {
+      "id": "104",
+      "source": "27",
+      "target": "7",
+      "weight": 0.751078513586,
+      "attributes": {
+        "0": "low",
+        "1": 7.0,
+        "2": 27.0,
+        "3": 0.751078513586
+      }
+    },
+    {
+      "id": "105",
+      "source": "28",
+      "target": "12",
+      "weight": 0.461369710893,
+      "attributes": {
+        "0": "low",
+        "1": 12.0,
+        "2": 28.0,
+        "3": 0.461369710893
+      }
+    },
+    {
+      "id": "106",
+      "source": "29",
+      "target": "5",
+      "weight": 0.540607370624,
+      "attributes": {
+        "0": "low",
+        "1": 5.0,
+        "2": 29.0,
+        "3": 0.540607370624
+      }
+    },
+    {
+      "id": "107",
+      "source": "29",
+      "target": "14",
+      "weight": 0.369611646034,
+      "attributes": {
+        "0": "low",
+        "1": 14.0,
+        "2": 29.0,
+        "3": 0.369611646034
+      }
+    },
+    {
+      "id": "108",
+      "source": "29",
+      "target": "32",
+      "weight": 0.425822700213,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 29.0,
+        "3": 0.425822700213
+      }
+    },
+    {
+      "id": "109",
+      "source": "29",
+      "target": "34",
+      "weight": 0.481708652024,
+      "attributes": {
+        "0": "low",
+        "1": 34.0,
+        "2": 29.0,
+        "3": 0.481708652024
+      }
+    },
+    {
+      "id": "110",
+      "source": "29",
+      "target": "35",
+      "weight": 0.323660549016,
+      "attributes": {
+        "0": "low",
+        "1": 35.0,
+        "2": 29.0,
+        "3": 0.323660549016
+      }
+    },
+    {
+      "id": "111",
+      "source": "29",
+      "target": "42",
+      "weight": 0.254911832307,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 29.0,
+        "3": 0.254911832307
+      }
+    },
+    {
+      "id": "112",
+      "source": "29",
+      "target": "10",
+      "weight": 0.454244484047,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 29.0,
+        "3": 0.454244484047
+      }
+    },
+    {
+      "id": "113",
+      "source": "30",
+      "target": "44",
+      "weight": 0.558768523602,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 30.0,
+        "3": 0.558768523602
+      }
+    },
+    {
+      "id": "114",
+      "source": "30",
+      "target": "17",
+      "weight": 0.456295600873,
+      "attributes": {
+        "0": "low",
+        "1": 17.0,
+        "2": 30.0,
+        "3": 0.456295600873
+      }
+    },
+    {
+      "id": "115",
+      "source": "30",
+      "target": "33",
+      "weight": 0.456295600873,
+      "attributes": {
+        "0": "low",
+        "1": 33.0,
+        "2": 30.0,
+        "3": 0.456295600873
+      }
+    },
+    {
+      "id": "116",
+      "source": "30",
+      "target": "34",
+      "weight": 0.309446226291,
+      "attributes": {
+        "0": "low",
+        "1": 34.0,
+        "2": 30.0,
+        "3": 0.309446226291
+      }
+    },
+    {
+      "id": "117",
+      "source": "30",
+      "target": "24",
+      "weight": 0.291628363744,
+      "attributes": {
+        "0": "low",
+        "1": 24.0,
+        "2": 30.0,
+        "3": 0.291628363744
+      }
+    },
+    {
+      "id": "118",
+      "source": "30",
+      "target": "10",
+      "weight": 0.321327089053,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 30.0,
+        "3": 0.321327089053
+      }
+    },
+    {
+      "id": "119",
+      "source": "31",
+      "target": "6",
+      "weight": 0.258169407215,
+      "attributes": {
+        "0": "low",
+        "1": 6.0,
+        "2": 31.0,
+        "3": 0.258169407215
+      }
+    },
+    {
+      "id": "120",
+      "source": "32",
+      "target": "5",
+      "weight": 0.396456155838,
+      "attributes": {
+        "0": "low",
+        "1": 5.0,
+        "2": 32.0,
+        "3": 0.396456155838
+      }
+    },
+    {
+      "id": "121",
+      "source": "32",
+      "target": "14",
+      "weight": 0.315384861725,
+      "attributes": {
+        "0": "low",
+        "1": 14.0,
+        "2": 32.0,
+        "3": 0.315384861725
+      }
+    },
+    {
+      "id": "122",
+      "source": "32",
+      "target": "29",
+      "weight": 0.3714243599,
+      "attributes": {
+        "0": "low",
+        "1": 29.0,
+        "2": 32.0,
+        "3": 0.3714243599
+      }
+    },
+    {
+      "id": "123",
+      "source": "32",
+      "target": "44",
+      "weight": 0.266138951724,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 32.0,
+        "3": 0.266138951724
+      }
+    },
+    {
+      "id": "124",
+      "source": "32",
+      "target": "9",
+      "weight": 0.283429117566,
+      "attributes": {
+        "0": "low",
+        "1": 9.0,
+        "2": 32.0,
+        "3": 0.283429117566
+      }
+    },
+    {
+      "id": "125",
+      "source": "32",
+      "target": "43",
+      "weight": 0.347732775233,
+      "attributes": {
+        "0": "low",
+        "1": 43.0,
+        "2": 32.0,
+        "3": 0.347732775233
+      }
+    },
+    {
+      "id": "126",
+      "source": "32",
+      "target": "34",
+      "weight": 0.414955093231,
+      "attributes": {
+        "0": "low",
+        "1": 34.0,
+        "2": 32.0,
+        "3": 0.414955093231
+      }
+    },
+    {
+      "id": "127",
+      "source": "32",
+      "target": "10",
+      "weight": 0.7694867267,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 32.0,
+        "3": 0.7694867267
+      }
+    },
+    {
+      "id": "128",
+      "source": "32",
+      "target": "25",
+      "weight": 0.339201976968,
+      "attributes": {
+        "0": "low",
+        "1": 25.0,
+        "2": 32.0,
+        "3": 0.339201976968
+      }
+    },
+    {
+      "id": "129",
+      "source": "33",
+      "target": "44",
+      "weight": 0.640694072913,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 33.0,
+        "3": 0.640694072913
+      }
+    },
+    {
+      "id": "130",
+      "source": "33",
+      "target": "17",
+      "weight": 1.0,
+      "attributes": {
+        "0": "low",
+        "1": 17.0,
+        "2": 33.0,
+        "3": 1.0
+      }
+    },
+    {
+      "id": "131",
+      "source": "33",
+      "target": "13",
+      "weight": 0.392588861735,
+      "attributes": {
+        "0": "low",
+        "1": 13.0,
+        "2": 33.0,
+        "3": 0.392588861735
+      }
+    },
+    {
+      "id": "132",
+      "source": "33",
+      "target": "30",
+      "weight": 0.465593265517,
+      "attributes": {
+        "0": "low",
+        "1": 30.0,
+        "2": 33.0,
+        "3": 0.465593265517
+      }
+    },
+    {
+      "id": "133",
+      "source": "33",
+      "target": "46",
+      "weight": 0.642202089062,
+      "attributes": {
+        "0": "low",
+        "1": 46.0,
+        "2": 33.0,
+        "3": 0.642202089062
+      }
+    },
+    {
+      "id": "134",
+      "source": "34",
+      "target": "5",
+      "weight": 0.383836041597,
+      "attributes": {
+        "0": "low",
+        "1": 5.0,
+        "2": 34.0,
+        "3": 0.383836041597
+      }
+    },
+    {
+      "id": "135",
+      "source": "34",
+      "target": "14",
+      "weight": 0.356675657115,
+      "attributes": {
+        "0": "low",
+        "1": 14.0,
+        "2": 34.0,
+        "3": 0.356675657115
+      }
+    },
+    {
+      "id": "136",
+      "source": "34",
+      "target": "29",
+      "weight": 0.358276220721,
+      "attributes": {
+        "0": "low",
+        "1": 29.0,
+        "2": 34.0,
+        "3": 0.358276220721
+      }
+    },
+    {
+      "id": "137",
+      "source": "34",
+      "target": "30",
+      "weight": 0.281121659069,
+      "attributes": {
+        "0": "low",
+        "1": 30.0,
+        "2": 34.0,
+        "3": 0.281121659069
+      }
+    },
+    {
+      "id": "138",
+      "source": "34",
+      "target": "32",
+      "weight": 0.348419923634,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 34.0,
+        "3": 0.348419923634
+      }
+    },
+    {
+      "id": "139",
+      "source": "34",
+      "target": "10",
+      "weight": 0.372792936239,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 34.0,
+        "3": 0.372792936239
+      }
+    },
+    {
+      "id": "140",
+      "source": "35",
+      "target": "5",
+      "weight": 0.467387895375,
+      "attributes": {
+        "0": "low",
+        "1": 5.0,
+        "2": 35.0,
+        "3": 0.467387895375
+      }
+    },
+    {
+      "id": "141",
+      "source": "35",
+      "target": "41",
+      "weight": 0.491455049825,
+      "attributes": {
+        "0": "low",
+        "1": 41.0,
+        "2": 35.0,
+        "3": 0.491455049825
+      }
+    },
+    {
+      "id": "142",
+      "source": "35",
+      "target": "24",
+      "weight": 0.597234110072,
+      "attributes": {
+        "0": "low",
+        "1": 24.0,
+        "2": 35.0,
+        "3": 0.597234110072
+      }
+    },
+    {
+      "id": "143",
+      "source": "35",
+      "target": "18",
+      "weight": 0.637460980013,
+      "attributes": {
+        "0": "low",
+        "1": 18.0,
+        "2": 35.0,
+        "3": 0.637460980013
+      }
+    },
+    {
+      "id": "144",
+      "source": "35",
+      "target": "10",
+      "weight": 0.311778550608,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 35.0,
+        "3": 0.311778550608
+      }
+    },
+    {
+      "id": "145",
+      "source": "35",
+      "target": "29",
+      "weight": 0.254758412733,
+      "attributes": {
+        "0": "low",
+        "1": 29.0,
+        "2": 35.0,
+        "3": 0.254758412733
+      }
+    },
+    {
+      "id": "146",
+      "source": "36",
+      "target": "14",
+      "weight": 0.32884695012,
+      "attributes": {
+        "0": "low",
+        "1": 14.0,
+        "2": 36.0,
+        "3": 0.32884695012
+      }
+    },
+    {
+      "id": "147",
+      "source": "36",
+      "target": "40",
+      "weight": 0.361121541751,
+      "attributes": {
+        "0": "low",
+        "1": 40.0,
+        "2": 36.0,
+        "3": 0.361121541751
+      }
+    },
+    {
+      "id": "148",
+      "source": "37",
+      "target": "1",
+      "weight": 0.883062890812,
+      "attributes": {
+        "0": "low",
+        "1": 1.0,
+        "2": 37.0,
+        "3": 0.883062890812
+      }
+    },
+    {
+      "id": "149",
+      "source": "37",
+      "target": "22",
+      "weight": 0.720619621356,
+      "attributes": {
+        "0": "low",
+        "1": 22.0,
+        "2": 37.0,
+        "3": 0.720619621356
+      }
+    },
+    {
+      "id": "150",
+      "source": "37",
+      "target": "11",
+      "weight": 0.766125781625,
+      "attributes": {
+        "0": "low",
+        "1": 11.0,
+        "2": 37.0,
+        "3": 0.766125781625
+      }
+    },
+    {
+      "id": "151",
+      "source": "38",
+      "target": "13",
+      "weight": 0.722243083503,
+      "attributes": {
+        "0": "low",
+        "1": 13.0,
+        "2": 38.0,
+        "3": 0.722243083503
+      }
+    },
+    {
+      "id": "152",
+      "source": "38",
+      "target": "48",
+      "weight": 0.898635800368,
+      "attributes": {
+        "0": "low",
+        "1": 48.0,
+        "2": 38.0,
+        "3": 0.898635800368
+      }
+    },
+    {
+      "id": "153",
+      "source": "39",
+      "target": "21",
+      "weight": 0.677827960417,
+      "attributes": {
+        "0": "low",
+        "1": 21.0,
+        "2": 39.0,
+        "3": 0.677827960417
+      }
+    },
+    {
+      "id": "154",
+      "source": "39",
+      "target": "42",
+      "weight": 0.325284033861,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 39.0,
+        "3": 0.325284033861
+      }
+    },
+    {
+      "id": "155",
+      "source": "39",
+      "target": "2",
+      "weight": 1.0,
+      "attributes": {
+        "0": "low",
+        "1": 2.0,
+        "2": 39.0,
+        "3": 1.0
+      }
+    },
+    {
+      "id": "156",
+      "source": "39",
+      "target": "11",
+      "weight": 0.611784257718,
+      "attributes": {
+        "0": "low",
+        "1": 11.0,
+        "2": 39.0,
+        "3": 0.611784257718
+      }
+    },
+    {
+      "id": "157",
+      "source": "40",
+      "target": "14",
+      "weight": 0.50112337038,
+      "attributes": {
+        "0": "low",
+        "1": 14.0,
+        "2": 40.0,
+        "3": 0.50112337038
+      }
+    },
+    {
+      "id": "158",
+      "source": "40",
+      "target": "36",
+      "weight": 0.394616391655,
+      "attributes": {
+        "0": "low",
+        "1": 36.0,
+        "2": 40.0,
+        "3": 0.394616391655
+      }
+    },
+    {
+      "id": "159",
+      "source": "41",
+      "target": "35",
+      "weight": 0.561667948284,
+      "attributes": {
+        "0": "low",
+        "1": 35.0,
+        "2": 41.0,
+        "3": 0.561667948284
+      }
+    },
+    {
+      "id": "160",
+      "source": "41",
+      "target": "18",
+      "weight": 0.628802184838,
+      "attributes": {
+        "0": "low",
+        "1": 18.0,
+        "2": 41.0,
+        "3": 0.628802184838
+      }
+    },
+    {
+      "id": "161",
+      "source": "41",
+      "target": "24",
+      "weight": 0.561667948284,
+      "attributes": {
+        "0": "low",
+        "1": 24.0,
+        "2": 41.0,
+        "3": 0.561667948284
+      }
+    },
+    {
+      "id": "162",
+      "source": "42",
+      "target": "21",
+      "weight": 0.289271012642,
+      "attributes": {
+        "0": "low",
+        "1": 21.0,
+        "2": 42.0,
+        "3": 0.289271012642
+      }
+    },
+    {
+      "id": "163",
+      "source": "42",
+      "target": "20",
+      "weight": 0.32915600734,
+      "attributes": {
+        "0": "low",
+        "1": 20.0,
+        "2": 42.0,
+        "3": 0.32915600734
+      }
+    },
+    {
+      "id": "164",
+      "source": "43",
+      "target": "44",
+      "weight": 0.25766192678,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 43.0,
+        "3": 0.25766192678
+      }
+    },
+    {
+      "id": "165",
+      "source": "43",
+      "target": "32",
+      "weight": 0.42123493406,
+      "attributes": {
+        "0": "low",
+        "1": 32.0,
+        "2": 43.0,
+        "3": 0.42123493406
+      }
+    },
+    {
+      "id": "166",
+      "source": "43",
+      "target": "10",
+      "weight": 0.476115921168,
+      "attributes": {
+        "0": "low",
+        "1": 10.0,
+        "2": 43.0,
+        "3": 0.476115921168
+      }
+    },
+    {
+      "id": "167",
+      "source": "43",
+      "target": "42",
+      "weight": 0.250992353221,
+      "attributes": {
+        "0": "low",
+        "1": 42.0,
+        "2": 43.0,
+        "3": 0.250992353221
+      }
+    },
+    {
+      "id": "168",
+      "source": "43",
+      "target": "9",
+      "weight": 0.363302986245,
+      "attributes": {
+        "0": "low",
+        "1": 9.0,
+        "2": 43.0,
+        "3": 0.363302986245
+      }
+    },
+    {
+      "id": "169",
+      "source": "44",
+      "target": "13",
+      "weight": 0.420639148388,
+      "attributes": {
+        "0": "low",
+        "1": 13.0,
+        "2": 44.0,
+        "3": 0.420639148388
+      }
+    },
+    {
+      "id": "170",
+      "source": "44",
+      "target": "46",
+      "weight": 0.387556164497,
+      "attributes": {
+        "0": "low",
+        "1": 46.0,
+        "2": 44.0,
+        "3": 0.387556164497
+      }
+    },
+    {
+      "id": "171",
+      "source": "44",
+      "target": "33",
+      "weight": 0.553012213119,
+      "attributes": {
+        "0": "low",
+        "1": 33.0,
+        "2": 44.0,
+        "3": 0.553012213119
+      }
+    },
+    {
+      "id": "172",
+      "source": "44",
+      "target": "30",
+      "weight": 0.492584362368,
+      "attributes": {
+        "0": "low",
+        "1": 30.0,
+        "2": 44.0,
+        "3": 0.492584362368
+      }
+    },
+    {
+      "id": "173",
+      "source": "44",
+      "target": "17",
+      "weight": 0.553012213119,
+      "attributes": {
+        "0": "low",
+        "1": 17.0,
+        "2": 44.0,
+        "3": 0.553012213119
+      }
+    },
+    {
+      "id": "174",
+      "source": "45",
+      "target": "4",
+      "weight": 0.423092531454,
+      "attributes": {
+        "0": "low",
+        "1": 4.0,
+        "2": 45.0,
+        "3": 0.423092531454
+      }
+    },
+    {
+      "id": "175",
+      "source": "45",
+      "target": "3",
+      "weight": 0.376656602192,
+      "attributes": {
+        "0": "low",
+        "1": 3.0,
+        "2": 45.0,
+        "3": 0.376656602192
+      }
+    },
+    {
+      "id": "176",
+      "source": "46",
+      "target": "13",
+      "weight": 0.452769384538,
+      "attributes": {
+        "0": "low",
+        "1": 13.0,
+        "2": 46.0,
+        "3": 0.452769384538
+      }
+    },
+    {
+      "id": "177",
+      "source": "46",
+      "target": "17",
+      "weight": 0.834755724657,
+      "attributes": {
+        "0": "low",
+        "1": 17.0,
+        "2": 46.0,
+        "3": 0.834755724657
+      }
+    },
+    {
+      "id": "178",
+      "source": "46",
+      "target": "33",
+      "weight": 0.834755724657,
+      "attributes": {
+        "0": "low",
+        "1": 33.0,
+        "2": 46.0,
+        "3": 0.834755724657
+      }
+    },
+    {
+      "id": "179",
+      "source": "46",
+      "target": "44",
+      "weight": 0.579968527096,
+      "attributes": {
+        "0": "low",
+        "1": 44.0,
+        "2": 46.0,
+        "3": 0.579968527096
+      }
+    },
+    {
+      "id": "180",
+      "source": "47",
+      "target": "31",
+      "weight": 0.321708360314,
+      "attributes": {
+        "0": "low",
+        "1": 31.0,
+        "2": 47.0,
+        "3": 0.321708360314
+      }
+    },
+    {
+      "id": "181",
+      "source": "47",
+      "target": "6",
+      "weight": 0.312438764439,
+      "attributes": {
+        "0": "low",
+        "1": 6.0,
+        "2": 47.0,
+        "3": 0.312438764439
+      }
+    },
+    {
+      "id": "182",
+      "source": "48",
+      "target": "13",
+      "weight": 0.628416615403,
+      "attributes": {
+        "0": "low",
+        "1": 13.0,
+        "2": 48.0,
+        "3": 0.628416615403
+      }
+    },
+    {
+      "id": "183",
+      "source": "48",
+      "target": "38",
+      "weight": 0.552597248905,
+      "attributes": {
+        "0": "low",
+        "1": 38.0,
+        "2": 48.0,
+        "3": 0.552597248905
+      }
+    }
+  ],
+  "stats": {
+    "nodes": 48,
+    "edges": 183
+  }
+}

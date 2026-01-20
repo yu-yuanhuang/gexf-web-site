@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GEXF社會網絡圖互動網站</title>
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Libraries (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/3.0.0/sigma.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/graphology@0.26.0/dist/graphology.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/graphology-library@0.8.0/dist/graphology-library.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <div class="title">社會網絡圖（GEXF）</div>
+        <div class="subtitle" id="stats">載入中…</div>
+      </div>
+
+      <section class="panel">
+        <h2>顯示控制</h2>
+
+        <div class="field">
+          <label>
+            <input type="checkbox" id="toggle-isolates" checked />
+            顯示孤立節點
+          </label>
+        </div>
+
+        <div class="field">
+          <label for="edge-weight">邊權重門檻（weight）</label>
+          <div class="range-row">
+            <input type="range" id="edge-weight" min="0" max="1000" value="0" />
+            <div class="range-value" id="edge-weight-val">0</div>
+          </div>
+          <div class="hint" id="edge-weight-hint"></div>
+        </div>
+
+        <div class="field">
+          <label for="degree">邊數門檻（degree）</label>
+          <div class="range-row">
+            <input type="range" id="degree" min="0" max="1" value="0" />
+            <div class="range-value" id="degree-val">0</div>
+          </div>
+          <div class="hint" id="degree-hint"></div>
+        </div>
+
+        <div class="field">
+          <label for="wdegree">加權邊數門檻（weighted degree）</label>
+          <div class="range-row">
+            <input type="range" id="wdegree" min="0" max="1" value="0" />
+            <div class="range-value" id="wdegree-val">0</div>
+          </div>
+          <div class="hint" id="wdegree-hint"></div>
+        </div>
+
+        <div class="field">
+          <label for="betweenness">中介中心性門檻（betweenness）</label>
+          <div class="range-row">
+            <input type="range" id="betweenness" min="0" max="1000" value="0" />
+            <div class="range-value" id="betweenness-val">0</div>
+          </div>
+          <div class="hint" id="betweenness-hint"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>節點清單（顯示／不顯示）</h2>
+        <div class="field">
+          <input type="text" id="node-search" placeholder="搜尋節點…" />
+        </div>
+        <div class="buttons-row">
+          <button id="btn-all">全選</button>
+          <button id="btn-none">全不選</button>
+          <button id="btn-invert">反選</button>
+        </div>
+        <div id="node-list" class="node-list"></div>
+      </section>
+
+      <section class="panel small">
+        <h2>操作提示</h2>
+        <ul class="tips">
+          <li>滑鼠滾輪：放大／縮小</li>
+          <li>拖曳空白處：平移</li>
+          <li>游標停在節點上：顯示詳細資料</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main id="main">
+      <div id="graph-container"></div>
+      <div id="graph-toolbar">
+        <button id="zoom-in" title="放大">＋</button>
+        <button id="zoom-out" title="縮小">－</button>
+        <button id="reset" title="重置視角">重置</button>
+      </div>
+      <div id="tooltip" class="tooltip" style="display:none;"></div>
+      <div id="loading" class="loading">載入圖譜中…</div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
