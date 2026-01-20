@@ -238,25 +238,67 @@ button:hover {
   flex: 0 0 auto;
 }
 
-.tooltip .v {
-  flex: 1 1 auto;
-  overflow-wrap: anywhere;
-}
 
-.loading {
+/* Loading overlay */
+.load-overlay {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(16,24,38,0.95);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 16px;
-  padding: 12px 14px;
-  color: var(--text);
-  box-shadow: var(--shadow);
-  z-index: 7;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: rgba(10, 15, 24, 0.72);
+  backdrop-filter: blur(6px);
 }
 
-@media (max-width: 960px) {
-  #sidebar { width: 320px; }
+.load-card {
+  width: min(520px, 90vw);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(16,24,38,0.94);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 16px;
+}
+
+.load-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.load-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.load-bar-inner {
+  height: 100%;
+  width: 6%;
+  background: rgba(255,255,255,0.72);
+  border-radius: 999px;
+  transition: width 220ms ease;
+}
+
+.load-text {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* If JS never runs, show subtle animated progress to indicate activity */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+.load-bar-inner::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 30%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 1.2s linear infinite;
 }
