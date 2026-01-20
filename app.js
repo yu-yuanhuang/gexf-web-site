@@ -36,6 +36,15 @@
     zoomIn: $("zoom-in"),
     zoomOut: $("zoom-out"),
     reset: $("reset"),
+
+    // appearance & export
+    themeMode: $("theme-mode"),
+    customColors: $("custom-colors"),
+    colorBg: $("color-bg"),
+    colorNode: $("color-node"),
+    colorEdge: $("color-edge"),
+    btnExportPng: $("btn-export-png"),
+    btnExportSvg: $("btn-export-svg"),
   };
 
   const fmt = {
@@ -48,6 +57,38 @@
     const n = (typeof x === "number") ? x : Number(x);
     return Number.isFinite(n) ? n : fallback;
   };
+
+  function normalizeHex(hex, fallback = "#000000") {
+    if (typeof hex !== "string") return fallback;
+    let h = hex.trim();
+    if (!h) return fallback;
+    if (h[0] !== "#") h = "#" + h;
+    if (/^#[0-9a-fA-F]{3}$/.test(h)) {
+      h = "#" + h[1] + h[1] + h[2] + h[2] + h[3] + h[3];
+    }
+    if (!/^#[0-9a-fA-F]{6}$/.test(h)) return fallback;
+    return h.toLowerCase();
+  }
+
+  function hexToRgb(hex) {
+    const h = normalizeHex(hex);
+    const r = parseInt(h.slice(1, 3), 16);
+    const g = parseInt(h.slice(3, 5), 16);
+    const b = parseInt(h.slice(5, 7), 16);
+    return { r, g, b };
+  }
+
+  function rgbaFromHex(hex, alpha = 1) {
+    const { r, g, b } = hexToRgb(hex);
+    return `rgba(${r},${g},${b},${clamp(alpha, 0, 1)})`;
+  }
+
+  function isDarkHex(hex) {
+    const { r, g, b } = hexToRgb(hex);
+    // relative luminance (approx)
+    const l = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+    return l < 0.5;
+  }
 
   function setProgress(p, text) {
     const pct = Math.max(0, Math.min(1, p));
@@ -276,6 +317,79 @@
     };
     graph.forEachNode((n) => (state.manualVisible[n] = true));
 
+    // --- Appearance (A) ---
+    const appearance = {
+      mode: (els.themeMode && els.themeMode.value) ? els.themeMode.value : "white", // white | black | custom
+      bg: normalizeHex(els.colorBg?.value || "#ffffff", "#ffffff"),
+      node: normalizeHex(els.colorNode?.value || "#4da3ff", "#4da3ff"),
+      edge: normalizeHex(els.colorEdge?.value || "#111827", "#111827"),
+      label: "#0b0f14",
+      edgeAlpha: 0.18,
+      edgeHoverNear: 0.45,
+      edgeHoverFar: 0.08,
+      border: "rgba(0,0,0,0.18)",
+      borderSize: 1,
+    };
+
+    function isDarkHex(hex) {
+      const rgb = hexToRgb(hex);
+      if (!rgb) return false;
+      // relative luminance approximation
+      const y = 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b;
+      return y < 128;
+    }
+
+    function applyAppearance(mode = appearance.mode) {
+      appearance.mode = mode;
+
+      if (mode === "white") {
+        appearance.bg = "#ffffff";
+        appearance.label = "#0b0f14";
+        appearance.edge = "#111827";
+        appearance.edgeAlpha = 0.14;
+        appearance.edgeHoverNear = 0.40;
+        appearance.edgeHoverFar = 0.06;
+        appearance.border = "rgba(0,0,0,0.18)";
+        appearance.borderSize = 1;
+      } else if (mode === "black") {
+        // A.2 黑底：節點外圈白，線白
+        appearance.bg = "#000000";
+        appearance.label = "#ffffff";
+        appearance.edge = "#ffffff";
+        appearance.edgeAlpha = 0.22;
+        appearance.edgeHoverNear = 0.65;
+        appearance.edgeHoverFar = 0.08;
+        appearance.border = "#ffffff";
+        appearance.borderSize = 2;
+      } else {
+        // A.3 自訂：背景色／節點顏色／線條顏色
+        appearance.bg = normalizeHex(els.colorBg?.value || appearance.bg, appearance.bg);
+        appearance.node = normalizeHex(els.colorNode?.value || appearance.node, appearance.node);
+        appearance.edge = normalizeHex(els.colorEdge?.value || appearance.edge, appearance.edge);
+        const dark = isDarkHex(appearance.bg);
+        appearance.label = dark ? "#ffffff" : "#0b0f14";
+        appearance.edgeAlpha = 0.18;
+        appearance.edgeHoverNear = 0.55;
+        appearance.edgeHoverFar = 0.08;
+        appearance.border = dark ? "#ffffff" : "rgba(0,0,0,0.18)";
+        appearance.borderSize = 1;
+      }
+
+      // set graph container background (canvases are transparent)
+      if (els.container) els.container.style.background = appearance.bg;
+
+      // show/hide custom color pickers
+      if (els.customColors) {
+        els.customColors.style.display = (appearance.mode === "custom") ? "grid" : "none";
+      }
+      // keep pickers in sync (background/edge)
+      if (els.colorBg) els.colorBg.value = normalizeHex(appearance.bg, els.colorBg.value || "#ffffff");
+      if (els.colorEdge) els.colorEdge.value = normalizeHex(appearance.edge, els.colorEdge.value || "#111827");
+    }
+
+    // Initial appearance
+    applyAppearance(appearance.mode);
+
     function recomputeVisibility() {
       const baseVisible = new Set();
       graph.forEachNode((node, attr) => {
@@ -314,6 +428,7 @@
     }
 
     // --- Renderer ---
+    applyAppearance(appearance.mode);
     setProgress(0.75, "初始化渲染器");
     const renderer = new Sigma(graph, els.container, {
       zIndex: true,
@@ -322,27 +437,51 @@
       labelGridCellSize: 60,
       labelRenderedSizeThreshold: 12,
       labelFont: "system-ui, -apple-system, Segoe UI, Roboto, Noto Sans TC, Microsoft JhengHei, Arial",
-      labelColor: { color: "#e9eef5" },
+      labelColor: { color: appearance.label },
 
       nodeReducer: (node, data) => {
         if (!state.visibleNodes.has(node)) return { ...data, hidden: true };
+        const out = { ...data };
+
+        // A.1/A.2/A.3 依背景配色調整節點／標籤（背景由container提供）
+        if (appearance.mode === "custom") out.color = appearance.node;
+        out.labelColor = appearance.label;
+        out.borderColor = appearance.border;
+        out.borderSize = appearance.borderSize;
+
         if (state.hoveredNode && node !== state.hoveredNode) {
-          return { ...data, size: Math.max(1, data.size * 0.75), label: "" };
+          out.size = Math.max(1, out.size * 0.75);
+          out.label = "";
+          out.zIndex = 0;
+        } else {
+          out.zIndex = 10;
         }
-        return data;
+        return out;
       },
 
       edgeReducer: (edge, data) => {
         if (!state.visibleEdges.has(edge)) return { ...data, hidden: true };
+        const out = { ...data };
+
+        const base = rgbaFromHex(appearance.edge, appearance.edgeAlpha);
+        const far = rgbaFromHex(appearance.edge, appearance.edgeHoverFar);
+        const near = rgbaFromHex(appearance.edge, appearance.edgeHoverNear);
+
         if (state.hoveredNode) {
           const s = graph.source(edge);
           const t = graph.target(edge);
           if (s !== state.hoveredNode && t !== state.hoveredNode) {
-            return { ...data, color: "rgba(255,255,255,0.07)", size: 0.5 };
+            out.color = far;
+            out.size = 0.5;
+          } else {
+            out.color = near;
+            out.size = 1.2;
           }
-          return { ...data, color: "rgba(255,255,255,0.25)", size: 1.2 };
+          return out;
         }
-        return data;
+
+        out.color = base;
+        return out;
       },
     });
 
@@ -491,6 +630,194 @@
         row.style.display = (!q || label.includes(q)) ? "flex" : "none";
       });
     });
+
+    // --- Appearance controls (A) ---
+    function refreshAppearanceFromUI() {
+      const mode = (els.themeMode && els.themeMode.value) ? els.themeMode.value : appearance.mode;
+      applyAppearance(mode);
+      // Some sigma settings are read once; setSetting keeps behaviour consistent across versions
+      if (typeof renderer.setSetting === "function") {
+        try { renderer.setSetting("labelColor", { color: appearance.label }); } catch (_) {}
+      }
+      renderer.refresh();
+    }
+
+    if (els.themeMode) {
+      els.themeMode.addEventListener("change", refreshAppearanceFromUI);
+    }
+    const onCustomColors = () => {
+      const mode = (els.themeMode && els.themeMode.value) ? els.themeMode.value : appearance.mode;
+      if (mode !== "custom") return;
+      refreshAppearanceFromUI();
+    };
+    if (els.colorBg) els.colorBg.addEventListener("change", onCustomColors);
+    if (els.colorNode) els.colorNode.addEventListener("change", onCustomColors);
+    if (els.colorEdge) els.colorEdge.addEventListener("change", onCustomColors);
+
+    // --- Export (B): PNG / SVG ---
+    function downloadBlob(blob, filename) {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+        a.remove();
+      }, 0);
+    }
+
+    function mergeSigmaCanvases() {
+      let canvases = null;
+      try {
+        if (typeof renderer.getCanvases === "function") {
+          const c = renderer.getCanvases();
+          canvases = [c.edges, c.nodes, c.labels].filter(Boolean);
+        }
+      } catch (_) {}
+      if (!canvases || !canvases.length) {
+        canvases = Array.from(els.container.querySelectorAll("canvas"));
+      }
+      if (!canvases.length) return null;
+
+      const w = canvases[0].width;
+      const h = canvases[0].height;
+      const out = document.createElement("canvas");
+      out.width = w;
+      out.height = h;
+      const ctx = out.getContext("2d");
+      // paint background first
+      const bg = appearance.bg || (getComputedStyle(els.container).backgroundColor || "#ffffff");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+      canvases.forEach((c) => {
+        try { ctx.drawImage(c, 0, 0); } catch (_) {}
+      });
+      return out;
+    }
+
+    async function exportPNG() {
+      const canvas = mergeSigmaCanvases();
+      if (!canvas) {
+        alert("找不到可匯出的畫布（canvas）。");
+        return;
+      }
+      canvas.toBlob((blob) => downloadBlob(blob, "graph.png"), "image/png");
+    }
+
+    function xmlEscape(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&apos;");
+    }
+
+    function buildVectorSVG() {
+      if (!renderer) return null;
+      const dims = (typeof renderer.getDimensions === "function")
+        ? renderer.getDimensions()
+        : { width: els.container.clientWidth, height: els.container.clientHeight };
+
+      const W = Math.max(1, Math.floor(dims.width));
+      const H = Math.max(1, Math.floor(dims.height));
+
+      // Prefer sigma-provided display data (already includes camera transform & reducers)
+      const nodeDisp = new Map();
+      state.visibleNodes.forEach((node) => {
+        let d = null;
+        try {
+          if (typeof renderer.getNodeDisplayData === "function") d = renderer.getNodeDisplayData(node);
+        } catch (_) {}
+        if (!d) {
+          const a = graph.getNodeAttributes(node);
+          let p = null;
+          try {
+            if (typeof renderer.graphToViewport === "function") p = renderer.graphToViewport({ x: a.x, y: a.y });
+          } catch (_) {}
+          if (!p) return;
+          d = { x: p.x, y: p.y, size: a.size || 3, label: a.label, color: a.color };
+        }
+        if (d && Number.isFinite(d.x) && Number.isFinite(d.y)) nodeDisp.set(node, d);
+      });
+
+      if (nodeDisp.size === 0) return null;
+
+      const edgeLines = [];
+      const edgeColor = rgbaFromHex(appearance.edge, Math.max(0.10, appearance.edgeAlpha));
+      state.visibleEdges.forEach((edge) => {
+        let s, t;
+        try {
+          s = graph.source(edge);
+          t = graph.target(edge);
+        } catch (_) { return; }
+        const ds = nodeDisp.get(s);
+        const dt = nodeDisp.get(t);
+        if (!ds || !dt) return;
+        edgeLines.push(`<line x1="${ds.x.toFixed(2)}" y1="${ds.y.toFixed(2)}" x2="${dt.x.toFixed(2)}" y2="${dt.y.toFixed(2)}" stroke="${edgeColor}" stroke-width="1" />`);
+      });
+
+      const nodeCircles = [];
+      const nodeLabels = [];
+      nodeDisp.forEach((d, node) => {
+        const r = Math.max(1.2, Math.min(40, safeNumber(d.size, 3)));
+        const fill = (appearance.mode === "custom") ? appearance.node : (d.color || graph.getNodeAttribute(node, "color") || "#4da3ff");
+        const stroke = appearance.border || "rgba(0,0,0,0.18)";
+        const sw = Math.max(0, safeNumber(appearance.borderSize, 1));
+        nodeCircles.push(`<circle cx="${d.x.toFixed(2)}" cy="${d.y.toFixed(2)}" r="${r.toFixed(2)}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" />`);
+
+        const label = graph.getNodeAttribute(node, "label") || d.label;
+        // avoid clutter: only export labels for visually larger nodes
+        if (label && r >= 10) {
+          const lx = d.x + r + 3;
+          const ly = d.y + 3;
+          nodeLabels.push(`<text x="${lx.toFixed(2)}" y="${ly.toFixed(2)}" font-size="12" font-family="system-ui, -apple-system, Segoe UI, Roboto, Noto Sans TC, Microsoft JhengHei, Arial" fill="${appearance.label}">${xmlEscape(label)}</text>`);
+        }
+      });
+
+      const svg = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">\n` +
+        `<rect width="100%" height="100%" fill="${appearance.bg}" />\n` +
+        `<g>${edgeLines.join("\n")}</g>\n` +
+        `<g>${nodeCircles.join("\n")}</g>\n` +
+        `<g>${nodeLabels.join("\n")}</g>\n` +
+        `</svg>`;
+      return svg;
+    }
+
+    async function exportSVG() {
+      // Attempt vector export; if a sigma API mismatch occurs, fall back to embedding a PNG inside an SVG.
+      try {
+        const svgText = buildVectorSVG();
+        if (svgText) {
+          const blob = new Blob([svgText], { type: "image/svg+xml;charset=utf-8" });
+          downloadBlob(blob, "graph.svg");
+          return;
+        }
+      } catch (_) {}
+
+      const canvas = mergeSigmaCanvases();
+      if (!canvas) {
+        alert("找不到可匯出的畫布（canvas）。");
+        return;
+      }
+      const pngUrl = canvas.toDataURL("image/png");
+      const dims = canvas;
+      const W = dims.width;
+      const H = dims.height;
+      const svgText = `<?xml version="1.0" encoding="UTF-8"?>\n` +
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">` +
+        `<image href="${pngUrl}" x="0" y="0" width="${W}" height="${H}" />` +
+        `</svg>`;
+      const blob = new Blob([svgText], { type: "image/svg+xml;charset=utf-8" });
+      downloadBlob(blob, "graph.svg");
+    }
+
+    if (els.btnExportPng) els.btnExportPng.addEventListener("click", exportPNG);
+    if (els.btnExportSvg) els.btnExportSvg.addEventListener("click", exportSVG);
 
     setProgress(1.0, "完成");
     finishLoading();

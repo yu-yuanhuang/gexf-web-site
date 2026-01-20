@@ -81,6 +81,47 @@
         <div id="node-list" class="node-list"></div>
       </section>
 
+      <section class="panel">
+        <h2>圖譜外觀</h2>
+
+        <div class="field">
+          <label for="theme-mode">背景／配色</label>
+          <select id="theme-mode">
+            <option value="white" selected>白底（預設）</option>
+            <option value="black">黑底（節點外圈白／線條白）</option>
+            <option value="custom">自訂配色（背景／節點／線條）</option>
+          </select>
+          <div class="hint">切換後僅影響右側圖譜區域，不影響左側控制面板外觀。</div>
+        </div>
+
+        <div id="custom-colors" class="custom-colors" style="display:none;">
+          <div class="color-row">
+            <div class="color-field">
+              <label for="color-bg">背景色</label>
+              <input id="color-bg" type="color" value="#ffffff" />
+            </div>
+            <div class="color-field">
+              <label for="color-node">節點顏色</label>
+              <input id="color-node" type="color" value="#4da3ff" />
+            </div>
+            <div class="color-field">
+              <label for="color-edge">線條顏色</label>
+              <input id="color-edge" type="color" value="#111827" />
+            </div>
+          </div>
+          <div class="hint">自訂配色會套用到所有節點與邊；滑鼠hover之強弱對比仍會保留。</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>輸出下載</h2>
+        <div class="buttons-row">
+          <button id="btn-export-png" type="button">下載PNG</button>
+          <button id="btn-export-svg" type="button">下載SVG</button>
+        </div>
+        <div class="hint">PNG為畫面截圖（含目前縮放與平移）；SVG優先輸出向量（若瀏覽器不支援則回退為嵌入PNG之SVG）。</div>
+      </section>
+
       <section class="panel small">
         <h2>操作提示</h2>
         <ul class="tips">
