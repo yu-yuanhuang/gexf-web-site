@@ -78,12 +78,33 @@
     nw: "節點權重（weight）",
     indeg: "入度（in-degree）",
     outdeg: "出度（out-degree）",
-    b0: "中介中心性（betweeness）",
+    b0: "中介中心性（betweenness）",
   };
 
   function buildGraph(bundle) {
     const Graph = graphology.Graph;
-    const g = new Graph({ type: "undirected" });
+
+    // CorText/Gephi exports sometimes declare "undirected" but still include reciprocal edges (A->B & B->A)
+    // with different weights. In graphology, an undirected graph cannot contain both directions.
+    // Therefore, if reciprocal edges are detected, we automatically switch to a directed graph.
+    const graphType = (() => {
+      const declared = (bundle && bundle.m && typeof bundle.m.t === "string") ? bundle.m.t : "undirected";
+      if (declared === "directed") return "directed";
+      // declared undirected: detect reciprocity
+      const seen = new Set();
+      for (const e of (bundle.e || [])) {
+        const s = String(e[0]);
+        const t = String(e[1]);
+        if (s === t) continue;
+        const key = s + ">" + t;
+        const rev = t + ">" + s;
+        if (seen.has(rev)) return "directed";
+        seen.add(key);
+      }
+      return "undirected";
+    })();
+
+    const g = new Graph({ type: graphType });
 
     // nodes: [idx, label, x, y, size, color, degree, wdegree, betweenness, attrs]
     for (const n of bundle.n) {
@@ -108,11 +129,30 @@
       const t = String(e[1]);
       if (!g.hasNode(s) || !g.hasNode(t)) continue;
       const w = safeNumber(e[2], 1);
-      g.addEdgeWithKey(`e${i++}`, s, t, {
-        weight: w,
-        size: 1,
-        color: "rgba(255,255,255,0.14)",
-      });
+
+      // Safety guard: if duplicate edges exist (same source & target), merge weights instead of crashing.
+      // For undirected graphs, reciprocal edges (A->B & B->A) are handled earlier by switching to a directed graph.
+      const existing = typeof g.edge === "function" ? g.edge(s, t) : null;
+      if (existing) {
+        const prev = safeNumber(g.getEdgeAttribute(existing, "weight"), 0);
+        g.setEdgeAttribute(existing, "weight", prev + w);
+        continue;
+      }
+
+      try {
+        g.addEdgeWithKey(`e${i++}`, s, t, {
+          weight: w,
+          size: 1,
+          color: "rgba(255,255,255,0.14)",
+        });
+      } catch (err) {
+        // Fallback: attempt to merge if the library reports a duplicate-edge error.
+        const ex2 = typeof g.edge === "function" ? g.edge(s, t) : null;
+        if (ex2) {
+          const prev = safeNumber(g.getEdgeAttribute(ex2, "weight"), 0);
+          g.setEdgeAttribute(ex2, "weight", prev + w);
+        }
+      }
     }
 
     return g;
@@ -268,7 +308,9 @@
       state.visibleNodes = vNodes;
       state.visibleEdges = vEdges;
 
-      els.stats.textContent = `顯示節點：${vNodes.size}／${bundle.s.n}｜顯示邊：${vEdges.size}／${bundle.s.e}`;
+      const totalNodes = (bundle && Array.isArray(bundle.n)) ? bundle.n.length : graph.order;
+      const totalEdges = (bundle && Array.isArray(bundle.e)) ? bundle.e.length : graph.size;
+      els.stats.textContent = `顯示節點：${vNodes.size}／${totalNodes}｜顯示邊：${vEdges.size}／${totalEdges}`;
     }
 
     // --- Renderer ---
